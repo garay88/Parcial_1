@@ -1,41 +1,60 @@
-Collavorative Reposity 
-
-	1. Se crea el repositorio.
-	2. Fork(En mi cuenta)
-	3. Clono en mi PC.
-		* git clone {link}
-		* git remote -v (Comprobacion)
-		* git remote rename origin fork
-		* git remote -v
-    		* git remote add origin {link del repositorio original}
-		* git remote -v 
-			* fork el repositorio mio
-			* origin el repositorio original
+°Lo que esta entre ( ) es explicacion.
+°Lo que esta entre { } es texto literal.
 
 
-Brachs
-Cada que voy a crar una modificacion creo una rama y la borro despues.
+PASO 1 (SE REALIZA UNA SOLA VEZ):
 
-	Brachs create
-		1. git checkout -b {nombre de la rama}
+	Collavorative Reposity:
+
+		1. Se crea el repositorio.
+		2. Fork(En mi cuenta)
+		3. Clono en mi PC.
+			* git clone {link del fork de mi cuenta}
+			* git remote -v (Comprobacion)
+			* git remote rename origin fork
+			* git remote -v (Comprobacion)
+    			* git remote add origin {link del repositorio original}
+			* git remote -v (Comprobacion):
+				* fork (el repositorio mio)
+				* origin (el repositorio original)
+
 	
-	Commit brach
-		1. git status (muestra los cambios)
-		2. git add . (añadir todo)
-		3. git commit -m {"texto explicaion"}
-		4. git push {remoto al que voy a enviar} {branch}
+PASO 2 (LOS RAMAS SE HACEN POR SEGURIDAD):
+
+	Brachs:
+	Cada que voy a crar una modificacion creo una rama y la borro despues.
+
+		Brachs create:
+			1. git checkout -b {nombre de la rama}
 	
-	Delete
-		1. git brach -d {nombre de la rama} (elimino brach local)
-		2. git push fork --delete {nombre de la rama} (elimino la rama remota)
+		Commit brach:
+			1. git status (muestra los cambios)
+			2. git add . (añadir todo)
+			3. git commit -m {"texto explicaion"}
+			4. git push {fork} {nombre de la rama}
+			5. git push {remoto al que voy a enviar} {branch}
+	
+		Delete:
+			1. git brach -d {nombre de la rama} (elimino brach local)
+			2. git push fork --delete {nombre de la rama} (elimino la rama remota)
 
 
-Pull request 
-Para el dueño del repositorio original
+PASO 3 (PARA USUARIOS):
+	1. Me dirijo a Github 
+	2. Voy a Pull request 
+	3. Selecciono repositorio de al que voy a enviar y el mio
+	4. envio
+
+PASO 3.1 (PARA ADMI DE REPOSITORIO):
+	1. Me dirijo a Github 
+	2. Voy a Pull request 
+	3. Merge pull request
+	4. Confirm merge
 	
-	
-Uptade
-AL final del dia actualizo el main y borro MI rama
+
+PASO 4:	
+	Uptade:
+	AL final del dia actualizo el main y borro MI rama
 
 	1. git pull origin master
 	2. git log (Ver las modificaciones)
