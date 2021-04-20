@@ -52,7 +52,7 @@ PASO 3.1 (PARA ADMI DE REPOSITORIO):
 	4. Confirm merge
 	
 
-PASO 4:	
+PASO 4 (PARA USUARIO):	
 	Uptade:
 	AL final del dia actualizo el main y borro MI rama
 
@@ -64,4 +64,21 @@ PASO 4:
 	3. git push fork master
 	4. Elimino la rama que cree en dia, el MAIN NO LO BORRO. (PASO 2, Delete)
 	
+PASO 4 (PARA ADMI DE REPOSITORIO):
+	Uptade:
+	Si no tengo el remoto
+		1. git clone {link repositorio original}
+
+	Si quiero creo una rama. (PASO 2,Brachs create)
+	No olvides hacer el commit de la brach. (PASO 2,Commit brach)
+		4. + git push {origin} {nombre de la rama}
+
+	Si estoy en una rama me voy a el main para realizar la actualizacion
+		* git checkout main
+
+	1. git pull origin main
+	2. Elimino la rama que cree en dia, el MAIN NO LO BORRO. (PASO 2, Delete)
+	 
+
+
 
