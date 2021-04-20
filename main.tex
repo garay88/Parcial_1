@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{listings}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{cite}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \vspace*{1cm}
+            
+        \Huge
+        \textbf{Parcial 1}
+            
+        \vspace{0.5cm}
+        \LARGE
+            
+        \vspace{5cm}
+            
+        \textbf{Juan David Martinez Bonilla,}
+        \textbf{Emanuel,}
+        \textbf{Sofia Marin Cacante}
+            
+        \vfill
+            
+        \vspace{0.8cm}
+            
+        \Large
+        Despartamento de Ingeniería Electrónica y Telecomunicaciones\\
+        Universidad de Antioquia\\
+        Medellín\\
+        Abril de 2021
+            
+    \end{center}
+\end{titlepage}
+
+
+\newpage
+\section{Problemas para resolver }
+A continuación se iran enumerando y documentando los problemas que van surgiendo al analizar el examen parcial.
+
+
+1.	Organización y disposición de los componentes electrónicos.\\
+
+
+2.	Como pedir los patrones al usuario.\\
+\\
+...\\
+...\\
+...\\
+
+\section{Análisis problema 1.}
+Para tener un control organizado de la matriz 8x8 de leds se plantea la idea de usar dos circuitos integrados 74HC595, uno para conectar los ánodos de las luces leds y otro para conectar los cátodos de dichas luces.
+La intención de esto es tener un sistema de referencia por “coordenadas” que permita ubicar cada led requerido de forma fácil y rapida.
+
+
+\section{Análisis problema 2.}
+Como idea principal se plantea nombrar e identificar cada posición de la matriz de leds, de forma que mediante una grafica mostrada en el manual de uso, el usuario pueda identificar que leds desea prender mediante el numero propio de cada led, además con el orden establecido de los números se puede dar la opción al usuario de prender varios leds al tiempo mediante un rango ingresado entre el 1 y el 64.
+\\
+\\
+Ejemplo:
+\\
+\\
+1\  \ 2\ \ \ 3\  \ 4\ \ \ 5\  \ 6\ \ \ 7\  \ 8\\ 
+- \  \  - \  \ - \  \ - \  \ - \  \ - \  \ - \   \ -\\
+- \  \  - \  \ - \  \ - \  \ - \  \ - \  \ - \   \ -\\
+- \  \  - \  \ - \  \ - \  \ - \  \ - \  \ - \   \ -\\
+- \  \  - \  \ - \  \ - \  \ - \  \ - \  \ - \   \ -\\
+- \  \  - \  \ - \  \ - \  \ - \  \ - \  \ - \   \ -\\
+- \  \  - \  \ - \  \ - \  \ - \  \ - \  \ - \   \ -\\
+57 58 59 60 61 62 63 64\\
+
+
+
+
+\end{document}
