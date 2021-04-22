@@ -83,7 +83,7 @@ Se rediseñó el circuito de tal manera que al seguir las compuertas lógicas de
 \\
 \\
 \textbf{\large Problema 3.}\\\\
-Como recibir los patrones que el usuario quiera ingresar y traducir cada parte del patrón a la posición del led correspondiente (19/04/21).\\
+¿Como recibir los patrones que el usuario quiera ingresar y traducir cada parte del patrón a la posición del led correspondiente? (19/04/21).\\
 \\\\\
 \\
 
@@ -111,10 +111,36 @@ Ejemplo:
     \label{fig:Imagen3}
 \end{figure}\\\\
 
-Después de inicializar las variables con el número del pin de salida, de configurar los puertos en modo OUTPUT y dejar las salidas en 0, se realizó el ingreso de cada dato con las posiciones de los leds correspondientes de forma manual, para poder experimentar con el funcionamiento e ir interiorizándolo, permitiendo crear patrones básicos.
+Después de inicializar las variables con el número del pin de salida, de configurar los pines en modo OUTPUT, se realizó el ingreso de cada dato con las posiciones de los leds correspondientes de forma manual, para poder experimentar con el funcionamiento e ir interiorizándolo, permitiendo crear patrones básicos.\\
 
 \textbf{\large Problema 4.}\\\\
+Al intentar realizar el desarrollo del problema 3 se concluyó que dicho método tenía poca optimización para desarrollar un programa al hacerlo de forma “manual” y se detectarón problemas al querer desarrollar patrones complejos dado que el sistema de filas y columnas anteriormente implementado, generaba un conflicto cuando se deseaba prender algunos patrones intermitentes (Su forma no era continua/lineaz). \\\\
 
+\textbf{\large Solución}\\\\
+1. Se descartó la idea de enumerar cada posición de la matriz de muestra (del 1 al 64) junto con la idea de permitir que el usuario ingrese un rango de valores para encender ese número de leds siguiendo el orden numérico descartado anteriormente.\\\\
+2. Se recurrió al uso de la función shiftOut la cual recibe 4 parámetros:\\
+
+-Puerto serial (Transmision de datos)
+
+-Puerto SRCLK (Reloj)
+
+-Bit menos significativo (LSBFIRST)
+
+-Cadena de datos (8 bits)\\
+
+
+Permitiéndonos así configurar la matriz de una forma más ordenada y sencilla, además de que con el método de entrada por bits (Y siguiendo la tabla de verdad  de la figura 2) se puede imprimir cualquier patrón sin ningún inconveniente.\\
+
+\textbf{\large Implementación}\\\\
+\begin{figure}[h]
+    \includegraphics[width=8cm]{Imagen4.png}
+    \centering
+    \caption{Segundo codigo (Recortado)}
+    \label{fig:Imagen4}
+\end{figure}\\\\
 
 
 \end{document}
+
+
+
