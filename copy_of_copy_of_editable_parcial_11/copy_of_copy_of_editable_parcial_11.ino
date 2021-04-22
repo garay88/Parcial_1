@@ -21,6 +21,7 @@ void ledWrite(int GLed, int RLed){  //Gled = Columnas; Rled = Filas
    digitalWrite(RCLK, LOW);
 }
 
+//Creo una matriz para que todos los led´s este en LOW
 void clear(){
    nFilas=8;
    nCol=2;
@@ -34,12 +35,14 @@ void clear(){
    for(int i = 0;i<nFilas;i++,Cont = Cont*2){
       *(*(puntero_clear+i)+0) = 255;
       *(*(puntero_clear+i)+1) = Cont;
-
    }
 }
 
-void Full(){
 
+void viewMatriz(int **puntero, int nFilas, int nCol){
+ for(int i=0;i<nFilas;i++){
+    ledWrite((*(*(puntero+i)+0)),(*(*(puntero+i)+1)));         
+ }               
 }
 
 void setup(){
@@ -64,30 +67,27 @@ void loop(){
   Option = Serial.parseInt();
   switch(Option){
     case 1:   //Matriz pretederminada
-      ptrTime=&Time;
-        *ptrTime = millis();
-        while (Time%Duracion < Duracion/2){    //
-            *ptrTime = millis();
-            ledWrite(0,1);    // * leds fila 1
-            ledWrite(0,;2)    // * leds fila 2
-            ledWrite(31,4);   // 3 primeros led fila 3
-            ledWrite(1,8);    // Todos menos el ultimo fila 4
-            ledWrite(248,16);   // Los tres ultimos fila 5
-            ledWrite(56,32);    // Fila 6
-            ledWrite(0,64);     // * leds Fila 7
-            ledWrite(129,128);  // *(1,8) Fila 8  
-        }
-        
-      ledWrite(255,0);    
-        ledWrite(255,2);      
-        ledWrite(255,4);    
-        ledWrite(255,8);    
-        ledWrite(255,16);    
-        ledWrite(255,32);     
-        ledWrite(255,64);     
-        ledWrite(255,128);    
-      
-        break;
+    ptrTime=&Time;
+    *ptrTime = millis();
+    while (Time%Duracion < Duracion/2){    //
+      *ptrTime = millis();
+      ledWrite(0,1);    // * leds fila 1
+      ledWrite(0,2);    // * leds fila 2
+      ledWrite(31,4);   // 3 primeros led fila 3
+      ledWrite(1,8);    // Todos menos el ultimo fila 4
+      ledWrite(248,16);   // Los tres ultimos fila 5
+      ledWrite(56,32);    // Fila 6
+      ledWrite(0,64);     // * leds Fila 7
+      ledWrite(129,128);  // *(1,8) Fila 8  
+    }
+
+    clear();
+    viewMatriz(puntero_clear,nFilas,nCol);  
+    Serial.println("One moment, plis");
+    delay(2000);  //Esto es para que el programa no se muera
+    break;
+  
+ 
       
       
         
