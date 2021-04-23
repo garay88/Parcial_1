@@ -1,0 +1,22 @@
+Manual 
+
+1. El control de la matriz de LEDs 8x8 se planteó con el uso de dos circuitos integrados 74hc595, uno para controlar los ánodos de los LEDs y el otro para controlar los cátodos, así nuestra matriz puede funcionar como un sistema de coordenadas. 
+
+2. Se inicializan las variables SER, SRCLK, RCLK en output y se implementa el metodo de desplazamiento por barrido. 
+
+3.Se declaran las funciones que se van a utilizar. ¿qué hacen esas funciones?: 
+-ledWrite(int GLed; int RLed): GLed son las columnas y RLed son las filas.
+-digitalWrite será utilizado para activar el flanco de subida del registro de salida. 
+
+-ShiftOut: Los datos se envian de manera que los primeros que se ngresen son los ultimos en la posicion del integrado, si están en orden del bit menos significativo (LSBFIRST) y si están en orden del más significativo (MSBFIRST). 
+
+-ledWrite: La funcion recibe dos enteros y se usa en conjunto con la funcion shiftOuT; primero se envian los datos de la segunda posición de los argumentos porque los datos se van desplazando al enviarlos de froma serial.
+
+-Verificación (full): Esta función crea una matriz bidimensional cuyo contenido está en memoria dinámica, creando una columna de ceros y otra columna que será dependiente de la posición de la fila.
+
+-Clear: Se utiliza para limpiar la matriz, se basa en la función verificación pero en la primera columna en lugar de colocar 0, coloca un 255.
+ 
+-viewMatriz: Es la función que se utiliza para enviar las matrices a los integrados e imprimierlas o mostrarlas. 
+
+4. Opciones al usuario: Al usuario se le presentan tres opciones y debe ingresar: 1, 2 o 3; dependiendo de la opción que desee. 
+5. Para la funcion imagen el usuario debe ingresar 8 enteros que estén entre 0 y 255 o los puede ingresar en código binario que representen valores también entre 0 y 255. 
