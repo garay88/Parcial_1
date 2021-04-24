@@ -1,3 +1,30 @@
+/*
+||@date    23/04/2021
+||@authors Emmanuel Garay Rivera
+||         Sofia Marin Cacante
+||       Juan David Martinez Bonilla
+||@version 1.0
+||@url     https://github.com/garay88/Parcial_1
+|| 
+||@description
+||| Arduino => 74HC595 => 74HC595 => Matriz
+||| 
+||| El control de la matriz de LEDs 8x8 se planteó con el 
+||| uso de dos circuitos integrados 74hc595, uno para controlar
+||| los ánodos de los LEDs y el otro para controlar los cátodos, 
+||| así nuestra matriz puede funcionar como un sistema de
+||| coordenadas.
+|||
+||| OPCIONES PARA EL USUARIO: Al usuario se le presentan tres opciones
+||| y debe ingresar: 1, 2 o 3; dependiendo de la opción que desee.
+|||
+||| Para la funcion imagen el usuario debe ingresar 8 enteros que estén 
+||| entre 0 y 255 o los puede ingresar en código binario que representen 
+||| valores también entre 0 y 255. 
+||#
+||@note: el tinkercad aveces no colabora :)
+*/
+
 unsigned long Time = millis();   //Tiempo de programa
 unsigned long *ptrTime;
 int Duracion = 7000;    //Duración predeterminada en milisegundos
